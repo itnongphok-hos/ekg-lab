@@ -1,0 +1,22 @@
+{
+  "name": "ekg-lab-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ระบบดูภาพ EKG และผล Out Lab",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "check-hosxp": "node --env-file-if-exists=.env -e \"require('./hosxp').ping().then(r=>{console.log(JSON.stringify(r, null, 2));process.exit(0)})\""
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-session": "^1.19.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.24.6",
+    "session-file-store": "^1.5.0",
+    "sharp": "^0.35.5"
+  },
+  "engines": {
+    "node": ">=22.9"
+  }
+}

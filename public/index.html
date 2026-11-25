@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ดูภาพ EKG / Out Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>EKG / Out Lab</h1>
+    <input id="search" type="search" placeholder="พิมพ์ HN แล้วกด Enter หรือค้นชื่อ…" autocomplete="off" />
+    <span id="hisStatus" class="his-status hidden"></span>
+    <div id="userMenu" class="user-menu hidden">
+      <span id="userDisplay" class="user-display"></span>
+      <button id="btnLogout" class="btn-logout" title="ออกจากระบบ">ออกจากระบบ</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-head"><span id="sidebarTitle">10 HN นำเข้าล่าสุด</span><button id="btnRefreshRecent" title="รีเฟรช">⟳</button></div>
+      <ul id="patientList" class="patient-list"></ul>
+      <p id="emptyPatients" class="muted hidden">ยังไม่มีข้อมูลผู้ป่วย</p>
+    </aside>
+
+    <section class="content">
+      <div id="placeholder" class="placeholder">
+        <p>เลือกผู้ป่วยทางซ้าย หรือค้นหาด้วย HN</p>
+      </div>
+
+      <div id="patientView" class="hidden">
+        <div class="patient-head">
+          <div>
+            <div class="hn" id="pvHn"></div>
+            <div class="pname" id="pvName"></div>
+          </div>
+        </div>
+
+        <div id="hisBanner" class="his-banner hidden"></div>
+        <div id="autoStatus" class="auto-status hidden"></div>
+        <div class="toolbar">
+          <div class="tabs" id="typeTabs">
+            <button data-type="all" class="active">ทั้งหมด</button>
+            <button data-type="ekg">EKG</button>
+            <button data-type="lab">Out Lab</button>
+            <button data-type="scan" title="ภาพสแกนใน HOSxP ที่ไม่ได้ระบุประเภท">สแกน HOSxP</button>
+          </div>
+          <button id="btnCompare" disabled title="เลือก 2 ภาพเพื่อเทียบ">เทียบภาพ (0/2)</button>
+        </div>
+
+        <div id="timeline"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Viewer -->
+  <div id="viewer" class="viewer hidden">
+    <div class="viewer-bar">
+      <div class="viewer-title" id="viewerTitle"></div>
+      <div class="viewer-tools">
+        <button data-act="zoomOut" title="ย่อ (-)">−</button>
+        <button data-act="fit" title="พอดีจอ (0)">พอดี</button>
+        <button data-act="zoomIn" title="ขยาย (+)">+</button>
+        <button data-act="rotate" title="หมุน (R)">⟳</button>
+        <button data-act="invert" title="กลับสี (I)">กลับสี</button>
+        <label class="slider">สว่าง<input type="range" id="brightness" min="50" max="200" value="100" /></label>
+        <label class="slider">คอนทราสต์<input type="range" id="contrast" min="50" max="250" value="100" /></label>
+        <button data-act="reset" title="รีเซ็ต">รีเซ็ต</button>
+        <button data-act="sync" id="btnSync" class="hidden" title="ซูม/เลื่อนพร้อมกัน">ล็อกพร้อมกัน</button>
+        <button data-act="prev" id="btnPrev" title="ก่อนหน้า (←)">‹</button>
+        <button data-act="next" id="btnNext" title="ถัดไป (→)">›</button>
+        <a id="btnOpenNew" target="_blank" rel="noopener">เปิดไฟล์</a>
+        <button data-act="close" class="close" title="ปิด (Esc)">✕</button>
+      </div>
+    </div>
+    <div class="viewer-panes" id="viewerPanes"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
