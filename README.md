@@ -111,12 +111,12 @@ cp .env.example .env
 |---|---|---|
 | `PORT` | พอร์ตเว็บ | `3000` |
 | `SESSION_SECRET` | สุ่มตัวอักษร 32 ตัวสำหรับ session | `abc123...` |
-| `HOSXP_DB_HOST` | IP ของ Image DB | `192.168.0.238` |
+| `HOSXP_DB_HOST` | IP ของ Image DB | `192.168.0.xxx` |
 | `HOSXP_DB_NAME` | ชื่อ Image DB | `hosimage` |
 | `HOSXP_DB_USER` | MySQL user | `ekg_readonly` |
 | `HOSXP_DB_PASSWORD` | MySQL password | |
 | `HOSXP_DB_CHARSET` | charset | `TIS620_THAI_CI` |
-| `HOSXP_AUTH_DB_HOST` | IP ของ Auth DB | `192.168.0.246` |
+| `HOSXP_AUTH_DB_HOST` | IP ของ Auth DB | `192.168.0.xxx` |
 | `HOSXP_AUTH_DB_NAME` | ชื่อ Auth DB | `hos` |
 | `HOSXP_AUTH_DB_USER` | MySQL user (Auth) | `ekg_readonly` |
 | `HOSXP_AUTH_DB_PASSWORD` | MySQL password (Auth) | |
