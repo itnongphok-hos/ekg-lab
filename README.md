@@ -28,8 +28,8 @@
                                                  ←→  MySQL hos      (auth, lab_head, lab_order)
 ```
 
-- **Image DB** (`hosimage` / `192.168.0.238`): `opdscan`, `patient_opd_scan`, `er_image`, `lab_order_image`, `patient`
-- **Auth DB** (`hos` / `192.168.0.246`): `opduser` (login), `lab_head`, `lab_order` (metadata Out Lab)
+- **Image DB** (`hosimage` / `192.168.0.xxx`): `opdscan`, `patient_opd_scan`, `er_image`, `lab_order_image`, `patient`
+- **Auth DB** (`hos` / `192.168.0.xxx`): `opduser` (login), `lab_head`, `lab_order` (metadata Out Lab)
 
 ---
 
